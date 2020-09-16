@@ -138,6 +138,11 @@ a.anchor {
     opacity: 100%;
 }
 
+.menu-choice.selected {
+    color: red;
+    opacity: 100%;
+}
+
 .button {
     background-color: rgb(47, 130, 255);
     color: white;
@@ -146,6 +151,10 @@ a.anchor {
     justify-content: center;
     height: 50px;
     width: 200px;
+}
+
+.button.selected {
+    background-color: rgba(101, 142, 255, 0.5) !important;
 }
 
 .button-position-1 {
