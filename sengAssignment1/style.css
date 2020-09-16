@@ -1,0 +1,118 @@
+div.sticky {
+   position: sticky;
+   top: 10px; 
+}
+
+body div.container {
+    margin: 0 16% 0 16%;
+}
+
+.w-100 {
+    width: 100%;
+}
+
+.h-100 {
+    height: 100%;
+}
+
+.d-flex {
+    display: flex;
+}
+
+.align-items-center {
+    align-items: center;
+}
+
+.align-content-center {
+    align-content: center;
+}
+
+.justify-content-center {
+    justify-content: center;
+}
+
+.justify-items-center {
+    justify-items: center;
+}
+
+.font-primary {
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.shadow-div {
+    box-shadow: 0 11px 16px 0 rgba(0,0,0,0.2),0 10px 10px 0 rgba(0,0,0,0.19);
+}
+
+.round-corner {
+    border-radius: 10px;
+}
+
+.house-size {
+    width: 20px;
+}
+
+.navigation-bar {
+    padding: 5px 10px 5px 20px;
+    position: sticky;
+    top: 0px; 
+    border-radius: 10px;
+}
+
+.mt-0 {
+    margin-top: 0;
+}
+
+.body-background-main {
+    background-image: url('resources/bg.jpg');
+    background-size: cover;
+}
+
+.bg-color-primary {
+    background-color: rgb(175, 175, 175);
+}
+
+.bg-color-secondary {
+    background-color: rgb(31, 31, 31);
+}
+
+.bg-color-teniary {
+    background-color: rgb(0, 0, 0);
+}
+
+.selected {
+    font-style: italic;
+    color: red !important;
+}
+
+.pr-10 {
+    padding-right: 10px;
+}
+
+.px-20 {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+a {
+    color: red;
+    opacity: 50%;
+}
+
+.font-white {
+    color: white;
+}
+
+
+a:hover {
+    opacity: 100%;
+}
+
+.menu-choice {
+    color: black;
+    opacity: 50%;
+}
+
+.menu-choice:hover {
+    color: red;
+    opacity: 100%;
+}
