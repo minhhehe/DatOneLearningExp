@@ -176,16 +176,24 @@ a.anchor {
 }
 
 .td-align-center {
+    text-align: center;
     text-align: -webkit-center;
+    text-align: -moz-center;
 }
 
 .text-align-center {
+    text-align: center;
     text-align: -webkit-center;
+    text-align: -moz-center;
 }
 
 .character-picture {
     width: 50%;
     float: left;
+}
+
+.character-picture-image {
+    width: 454px;
 }
 
 .character-bio {
@@ -200,4 +208,16 @@ a.anchor {
 
 .frame-color-athene {
     border-color: darkred;
+}
+
+.frame-color-alex {
+    border-color: rgb(38, 0, 255);
+}
+
+.frame-color-snow {
+    border-color: rgb(255, 255, 255);
+}
+
+.frame-color-lacie {
+    border-color: rgb(82, 82, 82);
 }
