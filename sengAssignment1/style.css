@@ -175,6 +175,15 @@ a.anchor {
     left: 550px;
 }
 
+.home-div {
+    position: absolute;
+    top: 530px;
+    right: 100px;
+    height: 345px;
+    width: 515px;
+}
+
+
 .td-align-center {
     text-align: center;
     text-align: -webkit-center;
@@ -220,4 +229,8 @@ a.anchor {
 
 .frame-color-lacie {
     border-color: rgb(82, 82, 82);
+}
+
+.vertical-align-text-top {
+    vertical-align: text-top;
 }
