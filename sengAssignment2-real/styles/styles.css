@@ -1,0 +1,122 @@
+@media screen and (min-width: 320px) {
+    .game-board {
+        /* width: 100%; */
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+
+@media screen and (min-width: 768px) {
+    .game-board {
+        /* width: 70%; */
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .game-board {
+        /* width: 50%; */
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+.board-container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.select-stuff-group {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+}
+
+.cell_flag {
+    background-image: url('../assets/flag.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.cell_mine {
+    background-image: url('../assets/dragon.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+.game-row:nth-child(n) .hidden_cell:nth-child(2n) {
+    background-color: blue;
+    background-size: contain;
+}
+
+.game-row:nth-child(n) .hidden_cell:nth-child(2n+1) {
+    background-color: rgb(121, 121, 255);
+    background-size: contain;
+}
+
+.game-row:nth-child(2n) .hidden_cell:nth-child(2n+1) {
+    background-color: blue;
+    background-size: contain;
+}
+
+.game-row:nth-child(2n) .hidden_cell:nth-child(2n) {
+    background-color: rgb(121, 121, 255);
+    background-size: contain;
+}
+
+.cell_number_1 {
+    background-image: url('../assets/number_one.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.cell_number_2 {
+    background-image: url('../assets/number_two.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+.cell_number_3 {
+    background-image: url('../assets/number_three.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+.cell_number_4 {
+    background-image: url('../assets/number_four.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+.cell_number_5 {
+    background-image: url('../assets/number_five.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+.cell_number_6 {
+    background-image: url('../assets/number_six.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+.cell_number_7 {
+    background-image: url('../assets/number_seven.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+.cell_number_8 {
+    background-image: url('../assets/number_eight.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.game-row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+
+.game-cell {
+    margin: 0 !important;
+    padding: 0 !important;
+}

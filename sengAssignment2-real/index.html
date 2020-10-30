@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <!-- Include meta tag to ensure proper rendering and touch zooming -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>A Basic Minesweeper</title>
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+    <link rel="stylesheet" href="styles/styles.css"  type="text/css"/>
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+  </head>
+  <body>
+    <script src="scripts/engine.js?v=202010181122"></script>
+    <div data-role="page">
+      <div data-role="header">
+        <h1>Welcome To Minh's Minesweeper</h1>
+      </div>
+      <div data-role="main" class="ui-content">
+        <div class="board-container">
+          <div class="board-info" id="the_board_summary">
+            <div id="the_time">
+              0 hour :0 minute(s) : 00 second(s)
+            </div>
+            <div id="the_number_of_moves">
+              0 move(s)
+            </div>
+            <div id="the_number_of_flags_left">
+              0 flag(s) left
+            </div>
+            <div class="select-stuff-group">
+              <div class="ui-field-contain">
+                  <select name="select-native-1" id="select_difficulty">
+                      <option value="default">Default Normal Difficulty</option>
+                      <option value="easy">Easy</option>
+                      <option value="normal">Normal</option>
+                      <option value="hard">Hard</option>
+                  </select>
+              </div>
+            </div>
+            <div>
+              <button class="ui-btn" id="restart_button">Restart</button>
+            </div>
+          </div>
+          <div class="game-board" id="the_board">
+              
+          </div>
+        </div>
+        <div data-role="popup" id="system_message_lose" data-dismissible="false" class="ui-content">
+          <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
+          <p>
+            Sorry, looks like you have not what it takes to be a minesweeper.
+          </p>
+        </div>
+        <div data-role="popup" id="system_message_win"  data-dismissible="false" class="ui-content">
+          <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
+          <p>
+            It looks like you barely got by, congratulation on winning.
+          </p>
+        </div>
+      </div>
+      <div data-role="footer">
+        <h1>This minesweeper looks kind of bad but hey it works, I think...</h1>
+      </div>
+    </div>
+  </body>
+</html>
