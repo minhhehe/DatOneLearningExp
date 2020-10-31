@@ -12,34 +12,25 @@ const ChatSystemHandler = {
             console.log('chat--initialization', data);
             const response = {
                 isValid: true,
-                payload: {}
+                chatBoxState: chatServerInstance.getState(),
+                username: '',
+                user: null
             };
-            if (!data.user) {
+            if (!data.username) {
                 response.isValid = true;
-                response.payload.username = chatServerInstance.generateUserName();
-                socket.emit('testReturn', response);
+                response.user = chatServerInstance.generateUser();
+                response.username = response.user.username;
+                socket.emit('chat--initialization-return', response);
             }
             else {
-                socket.emit('testReturn', data);
+                response.isValid = true;
+                response.user = chatServerInstance.getAUser(data.username);
+                response.username = response.user.username;
+                socket.emit('chat--initialization-return', response);
             }
         });
         socket.on('chat--sendMessage', (data) => {
             console.log('chat--sendMessage', data);
-        });
-        socket.on('testSend', (data) => {
-            console.log('testReturn', { res: 'lolo' });
-            const response = {
-                isValid: true,
-                payload: {}
-            };
-            if (!data.user) {
-                response.isValid = false;
-                response.errorMessage = 'user is missing';
-                socket.emit('testReturn', response);
-            }
-            else {
-                socket.emit('testReturn', data);
-            }
         });
     }
 };

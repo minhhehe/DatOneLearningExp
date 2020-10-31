@@ -1,7 +1,8 @@
-import React, { Component } from "react";
 import socketIOClient from "socket.io-client";
+import cookiesService from "./../controller/cookie-service";
 
 let socket: SocketIOClient.Socket = socketIOClient('http://localhost:8080');
-socket.emit('chat--initialization', { user: '', payload: { action: '' } })
+let username = cookiesService.get('username');
+socket.emit('chat--initialization', { username: username, payload: { action: '' } })
 
 export { socket };

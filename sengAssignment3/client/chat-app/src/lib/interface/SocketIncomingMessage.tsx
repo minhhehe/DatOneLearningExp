@@ -1,6 +1,6 @@
-import { ChatBoxState, ChatUser } from "./chat/chat-state";
+import { ChatBoxState, ChatUser } from "./chat-state";
 
-export interface GenericSocketOutMsg {
+export interface GenericSocketIncMsg {
     isValid: boolean,
     errorMessage?: string
 }
@@ -11,7 +11,7 @@ export interface InitializationMessage extends NewStateMessage {
     user: ChatUser
 }
 
-export interface NewStateMessage extends GenericSocketOutMsg {
+export interface NewStateMessage extends GenericSocketIncMsg {
     chatBoxState: ChatBoxState
 }
 

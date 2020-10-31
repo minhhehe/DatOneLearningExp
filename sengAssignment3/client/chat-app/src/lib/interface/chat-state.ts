@@ -8,7 +8,7 @@ export interface ChatMessage {
 export interface ChatUser {
     username: string;
     isOnline: boolean;
-    userSettings: {
+    userSettings?: {
         [key: string]: string
     }
 }

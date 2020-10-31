@@ -1,6 +1,6 @@
 import socketio from 'socket.io';
-import { SocketOutgoingMessage } from './../../../models/socket-out-message';
-import { SocketIncomingMessage } from './../../../models/socket-in-message';
+import { GenericSocketOutMsg, InitializationMessage, NewStateMessage } from './../../../models/socket-out-message';
+import { GenericSocketIncMessage } from './../../../models/socket-in-message';
 import { ChatSystemServer } from './../../../models/chat/chat-server';
 import { ChatUser } from './../../../models/chat/chat-state';
 
@@ -16,48 +16,31 @@ const ChatSystemHandler = {
     },
 
     chatMessageHandler(socket: socketio.Socket, chatServerInstance: ChatSystemServer) {
-        socket.on('chat--initialization', (data: SocketIncomingMessage) => {
+        socket.on('chat--initialization', (data: GenericSocketIncMessage) => {
             console.log('chat--initialization', data);
-            const response: SocketOutgoingMessage = {
+            const response: InitializationMessage = {
                 isValid: true,
-                payload: {
-
-                }
+                chatBoxState: chatServerInstance.getState(),
+                username: '',
+                user: null
             }
 
-            if (!data.user) {
+            if (!data.username) {
                 response.isValid = true;
-                response.payload.username = chatServerInstance.generateUserName();
-                socket.emit('testReturn', response);
+                response.user = chatServerInstance.generateUser();
+                response.username = response.user.username;
+                socket.emit('chat--initialization-return', response);
             }
             else {
-                socket.emit('testReturn', data);
+                response.isValid = true;
+                response.user = chatServerInstance.getAUser(data.username);
+                response.username = response.user.username;
+                socket.emit('chat--initialization-return', response);
             }
         });
 
         socket.on('chat--sendMessage', (data) => {
             console.log('chat--sendMessage', data);
-        });
-
-        socket.on('testSend', (data: SocketIncomingMessage) => {
-            console.log('testReturn', { res: 'lolo' });
-
-            const response: SocketOutgoingMessage = {
-                isValid: true,
-                payload: {
-
-                }
-            }
-
-            if (!data.user) {
-                response.isValid = false;
-                response.errorMessage = 'user is missing';
-                socket.emit('testReturn', response);
-            }
-            else {
-                socket.emit('testReturn', data);
-            }
-
         });
 
     }

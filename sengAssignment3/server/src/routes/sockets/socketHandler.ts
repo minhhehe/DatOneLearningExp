@@ -1,8 +1,8 @@
 import socketio from 'socket.io';
 import ChatSystemHandler = require('./chat/chat');
 
-import { SocketOutgoingMessage } from './../../models/socket-out-message';
-import { SocketIncomingMessage } from './../../models/socket-in-message';
+import { GenericSocketOutMsg } from './../../models/socket-out-message';
+import { SocketIncNewMsg } from './../../models/socket-in-message';
 import { ChatSystemServer } from './../../models/chat/chat-server';
 
 const SocketHandler = {

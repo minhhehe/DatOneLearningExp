@@ -1,7 +1,7 @@
-export type SocketIncomingMessage = {
-    user: string,
-    payload: {
-        action: string,
-        data: { [ key: string ] : string }
-    }
+export interface GenericSocketIncMessage {
+    username: string
+}
+
+export interface SocketIncNewMsg extends GenericSocketIncMessage {
+    payload: any
 }
