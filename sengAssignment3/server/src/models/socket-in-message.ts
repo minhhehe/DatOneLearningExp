@@ -3,5 +3,10 @@ export interface GenericSocketIncMessage {
 }
 
 export interface SocketIncNewMsg extends GenericSocketIncMessage {
-    payload: any
+    message: string
+}
+
+export interface SocketIncCommand extends GenericSocketIncMessage {
+    command: string,
+    commandParam: string
 }

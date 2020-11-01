@@ -7,6 +7,20 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+html, body, #root, #root>div {
+  height: 90%
+}
+
+.chat-log {
+  height: 76vh;
+}
+
+.chat-log-window {
+  overflow-y: scroll;
+  height: 100%;
+  overflow-x: auto;
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;

@@ -1,7 +1,24 @@
 import styled, { css } from 'styled-components';
 
-const ChatLog = styled.div`
-    background-color: red
+export const OwnerMsg = styled.div`
+    color: red
 `;
 
-export default ChatLog;
+export const NormMsg = styled.div`
+`;
+
+export const ChatLog = styled.div`
+`
+
+export const OnlineDiv = styled.span`
+    color: green;
+`
+
+export const OfflineDiv = styled.span`
+    color: red;
+`
+
+export const ChatWindow = styled.div`
+    display: flex;
+    
+`

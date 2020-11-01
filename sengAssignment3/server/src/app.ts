@@ -54,8 +54,7 @@ const chatServerInstance = new ChatSystemServer();
 io.on('connection', (socket) => {
   console.log('a user connected', socket.id);
 
-  SocketHandler.default.load_common_event(socket);
-  SocketHandler.default.load_chat_event(socket, chatServerInstance);
+  SocketHandler.default.load_chat_event(socket, chatServerInstance, io);
 
 
 });

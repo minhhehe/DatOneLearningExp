@@ -15,4 +15,10 @@ export interface NewStateMessage extends GenericSocketIncMsg {
     chatBoxState: ChatBoxState
 }
 
+export interface CommandResult {
+    username: string;
+    success: boolean;
+    msg: string;
+}
+
 

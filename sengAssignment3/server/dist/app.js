@@ -45,8 +45,7 @@ app.use((err, req, res, next) => {
 const chatServerInstance = new chat_server_1.ChatSystemServer();
 io.on('connection', (socket) => {
     console.log('a user connected', socket.id);
-    SocketHandler.default.load_common_event(socket);
-    SocketHandler.default.load_chat_event(socket, chatServerInstance);
+    SocketHandler.default.load_chat_event(socket, chatServerInstance, io);
 });
 app.set('io', io);
 // const theApp = app; // for restAPi

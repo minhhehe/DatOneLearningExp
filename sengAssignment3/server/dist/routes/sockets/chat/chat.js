@@ -7,7 +7,7 @@ const ChatSystemHandler = {
     getRandomUserName() {
         return '';
     },
-    chatMessageHandler(socket, chatServerInstance) {
+    chatMessageHandler(socket, chatServerInstance, io) {
         socket.on('chat--initialization', (data) => {
             console.log('chat--initialization', data);
             const response = {
@@ -17,20 +17,48 @@ const ChatSystemHandler = {
                 user: null
             };
             if (!data.username) {
-                response.isValid = true;
                 response.user = chatServerInstance.generateUser();
-                response.username = response.user.username;
-                socket.emit('chat--initialization-return', response);
             }
             else {
-                response.isValid = true;
                 response.user = chatServerInstance.getAUser(data.username);
-                response.username = response.user.username;
-                socket.emit('chat--initialization-return', response);
             }
+            response.isValid = true;
+            response.username = response.user.username;
+            chatServerInstance.mapSocketIDToUserName(socket.id, response.username);
+            socket.emit('chat--initialization-return', response);
+            io.emit('chat--updateState', response);
         });
         socket.on('chat--sendMessage', (data) => {
             console.log('chat--sendMessage', data);
+            chatServerInstance.addNewMessage(data.message, data.username);
+            const response = {
+                isValid: true,
+                chatBoxState: chatServerInstance.getState()
+            };
+            io.emit('chat--updateState', response);
+        });
+        socket.on('chat--sendCommand', (data) => {
+            console.log('chat--sendCommand', data);
+            const retVal = chatServerInstance.handleCommands(data.username, data.command, data.commandParam);
+            console.log('result ', retVal);
+            if (retVal.success) {
+                chatServerInstance.mapSocketIDToUserName(socket.id, retVal.username);
+                const response = {
+                    isValid: true,
+                    chatBoxState: chatServerInstance.getState()
+                };
+                io.emit('chat--updateState', response);
+            }
+            socket.emit('chat--sendCommand-return', retVal);
+        });
+        socket.on('disconnect', () => {
+            console.log('user disconnected');
+            chatServerInstance.takeUserOffline(socket.id);
+            const response = {
+                isValid: true,
+                chatBoxState: chatServerInstance.getState()
+            };
+            io.emit('chat--updateState', response);
         });
     }
 };
