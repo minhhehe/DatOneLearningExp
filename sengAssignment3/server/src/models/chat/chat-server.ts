@@ -139,7 +139,7 @@ export class ChatSystemServer {
         }
         this.chatMessages.push(theMessage);
         if (this.state.messages.length > 200) {
-            this.state.messages = this.state.messages.slice(this.state.messages.length - 200);
+            this.state.messages.shift()
         }
         this.updateStateDate();
     }

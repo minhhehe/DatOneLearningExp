@@ -181,7 +181,7 @@ class App extends React.Component<{}, AppState> {
           keyboard={false}
         >
         <Modal.Header closeButton>
-            <Modal.Title>System Message</Modal.Title>
+            <Modal.Title>User list</Modal.Title>
           </Modal.Header>
           <Modal.Body>
             {domUser}
@@ -199,7 +199,7 @@ class App extends React.Component<{}, AppState> {
           keyboard={false}
         >
         <Modal.Header closeButton>
-            <Modal.Title>System Message</Modal.Title>
+            <Modal.Title>Your info</Modal.Title>
           </Modal.Header>
           <Modal.Body>
             {this.state.username}
