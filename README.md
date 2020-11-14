@@ -1,3 +1,3 @@
-# SENG513Assignments
-Repository for all the assignments of SENG 513 for private use.
-The codes in here should not be shared normally but built and hosted onto Google Cloud or AWS.
+# Assignment for a software engineering class
+Repository for all the assignments for use.
+The codes in here should not be shared normally but built by using npm install.
